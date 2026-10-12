@@ -1,0 +1,49 @@
+# Modelo: substituir pelo contrato do projecto. Firmar com `python scripts/contrato.py registar --versao 1`.
+openapi: 3.1.0
+info:
+  title: API do projecto
+  version: "0"
+paths:
+  /exemplos:
+    post:
+      summary: Cria um exemplo
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: "#/components/schemas/NovoExemplo" }
+      responses:
+        "201":
+          description: Criado
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/Exemplo" }
+        "422":
+          description: Dados inválidos
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/Erro" }
+components:
+  schemas:
+    NovoExemplo:
+      type: object
+      required: [nome]
+      properties:
+        nome: { type: string, minLength: 1, maxLength: 100 }
+    Exemplo:
+      type: object
+      required: [id, nome, criado_em]
+      properties:
+        id: { type: string }
+        nome: { type: string }
+        criado_em: { type: string, format: date-time }
+    Erro:
+      type: object
+      required: [erro]
+      properties:
+        erro:
+          type: object
+          required: [codigo, mensagem]
+          properties:
+            codigo: { type: string }
+            mensagem: { type: string }
