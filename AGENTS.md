@@ -20,6 +20,7 @@ O prompt de arranque diz o teu papel: **coordenador**, **dev-be** ou **dev-fe**.
 1. Lê a tua caixa (`coordenacao/caixas/<papel>.md`) e a tua linha no `QUADRO.md`.
 2. Trabalha só no teu ramo e na tua pasta (worktree). Nunca no ramo principal.
 3. Contrato primeiro: não implementes nada que não esteja no contrato firmado. Falta algo? Pede ao coordenador.
+   Tipos e cliente da API são gerados a partir do contrato (comando abaixo), nunca escritos ou editados à mão.
 4. Teste primeiro, depois implementação, depois a suite inteira e o quality gate local.
 5. Testes pesados ou partilhados: pede a vez na `FILA-TESTES.md`.
 6. Entrega: tarefa `em revisão` e uma nota com commits, como testaste, números reais e o que ficou por fazer.
@@ -34,7 +35,7 @@ O prompt de arranque diz o teu papel: **coordenador**, **dev-be** ou **dev-fe**.
 
 ## Comandos do projecto
 
-<!-- Preencher: instalar, testes unitários, integração, e2e, lint/tipos, análise estática, arrancar em dev. -->
+<!-- Preencher: instalar, gerar tipos/cliente a partir do contrato, testes unitários, integração, e2e, lint/tipos, análise estática, arrancar em dev. -->
 
 ## Nunca
 

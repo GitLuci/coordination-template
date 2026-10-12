@@ -25,6 +25,19 @@ recebe, e os erros. É firmado **antes** de qualquer implementação e versionad
    - FE: cada exemplo é um mock/fixture; os testes da interface usam-nos tal como estão.
 6. **Integração:** e2e com o BE real; se algo diverge, o contrato diz quem tem de mudar.
 
+## Tipos e cliente gerados a partir do contrato
+
+Os tipos e o cliente da API (no FE e, se fizer sentido, no BE) são **gerados** a partir do contrato firmado com o
+gerador que o projecto escolher, nunca escritos à mão nem editados depois de gerados.
+
+- O BE garante que o contrato gera sem erros no gerador do projecto antes de o propor (nomes de schemas e de operações
+  estáveis, para os nomes gerados não mudarem entre versões).
+- A cada nova versão firmada, quem consome regenera.
+- O quality gate verifica que o código gerado está em dia: regenerar a partir do contrato firmado não pode produzir
+  diferenças.
+
+O comando de geração fica no `AGENTS.md` de cada repositório.
+
 ## Mudar o contrato
 
 Pedido ao coordenador → decisão → nova versão firmada → aviso aos dois → os dois actualizam testes e mocks. O

@@ -8,7 +8,8 @@ Implementar a API e as regras de negócio exactamente como o contrato firmado di
 
 1. **Propõe o contrato** da fatia (`contrato/openapi.yaml` + `contrato/exemplos/`): endpoints, corpos de pedido e
    resposta, códigos de erro, paginação, autenticação, e pelo menos um exemplo de sucesso e um de erro por endpoint.
-   Entrega ao coordenador para firmar; não implementes antes de estar firmado.
+   Confirma que o contrato gera sem erros no gerador de tipos do projecto, com nomes de schemas e de operações
+   estáveis. Entrega ao coordenador para firmar; não implementes antes de estar firmado.
 2. **Exemplos → testes:** cada exemplo do contrato vira um teste do servidor (entrada exacta → saída exacta).
 3. **Implementa** até os testes passarem; depois a suite inteira e o quality gate local.
 4. **Testes de integração** com a base de dados e os serviços reais (ou contentores): pede a vez na fila se forem

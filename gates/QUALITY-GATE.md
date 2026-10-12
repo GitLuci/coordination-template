@@ -15,6 +15,8 @@ concretos de cada projecto ficam no `AGENTS.md` do repositório.
 | Build | ✔ | ✔ sem avisos novos |
 | Cobertura das linhas novas | ≥ meta do projecto | ≥ meta do projecto |
 | `python scripts/contrato.py verificar` | ✔ | ✔ |
+| Contrato gera sem erros no gerador de tipos do projecto | ✔ antes de propor | — |
+| Código gerado em dia (regenerar do contrato firmado não deixa diferenças) | ✔ se gerar | ✔ |
 
 ## De integração (pela fila de testes)
 

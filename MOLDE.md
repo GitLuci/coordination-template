@@ -69,7 +69,9 @@ Processo completo em [`contrato/README.md`](contrato/README.md). Em resumo:
 4. O **coordenador firma** o contrato: sobe a versão e regista-a (`scripts/contrato.py registar`).
 5. Só então os dois implementam, **em paralelo**:
    - o BE transforma os exemplos em testes do servidor;
-   - o FE transforma os mesmos exemplos em mocks e testes da interface.
+   - o FE transforma os mesmos exemplos em mocks e testes da interface;
+   - os tipos e o cliente da API são **gerados** a partir do contrato firmado (com o gerador do projecto), nunca
+     escritos à mão nem editados depois; cada nova versão obriga a regenerar.
 6. **Mudar o contrato** a meio: o dev pede ao coordenador (caixa), o coordenador decide, sobe a versão e avisa os
    dois. Ninguém muda o contrato em silêncio; um teste falha se o ficheiro mudar sem nova versão.
 
