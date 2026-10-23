@@ -1,0 +1,4 @@
+{
+  "request": {"method": "POST", "path": "/examples", "body": {"name": ""}},
+  "response": {"status": 422, "body": {"error": {"code": "invalid_name", "message": "The name is required."}}}
+}

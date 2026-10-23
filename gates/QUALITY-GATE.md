@@ -1,38 +1,36 @@
 # Quality gate
 
-Uma tarefa só vai a revisão com o gate **local** verde; só é integrada com o gate **de integração** verde. Os comandos
-concretos de cada projecto ficam no `AGENTS.md` do repositório.
+A task only goes to review with the **local** gate green; it is only integrated with the **integration** gate green. Each project's concrete commands live in the repository's `AGENTS.md`.
 
-## Local (o dev, antes de entregar)
+## Local (the dev, before delivering)
 
-| Verificação | BE | FE |
+| Check | BE | FE |
 |---|---|---|
-| Testes unitários, suite inteira | ✔ | ✔ |
-| Exemplos do contrato (versão firmada) | como testes do servidor | como mocks/fixtures dos testes |
-| Validação das respostas contra o schema | ✔ | — |
-| Lint e formatação | ✔ | ✔ |
-| Tipos (type-check) | ✔ se a linguagem tiver | ✔ |
-| Build | ✔ | ✔ sem avisos novos |
-| Cobertura das linhas novas | ≥ meta do projecto | ≥ meta do projecto |
-| `python scripts/contrato.py verificar` | ✔ | ✔ |
-| Contrato gera sem erros no gerador de tipos do projecto | ✔ antes de propor | — |
-| Código gerado em dia (regenerar do contrato firmado não deixa diferenças) | ✔ se gerar | ✔ |
+| Unit tests, whole suite | ✔ | ✔ |
+| Contract examples (signed version) | as server tests | as test mocks/fixtures |
+| Validation of responses against the schema | ✔ | — |
+| Lint and formatting | ✔ | ✔ |
+| Types (type-check) | ✔ if the language has them | ✔ |
+| Build | ✔ | ✔ with no new warnings |
+| Coverage of new lines | ≥ project target | ≥ project target |
+| `python scripts/contract.py verify` | ✔ | ✔ |
+| Contract generates without errors in the project's type generator | ✔ before proposing | — |
+| Generated code up to date (regenerating from the signed contract leaves no differences) | ✔ if it generates | ✔ |
 
-## De integração (pela fila de testes)
+## Integration (through the test queue)
 
-| Verificação | Quem corre | Passa se |
+| Check | Who runs | Passes if |
 |---|---|---|
-| Integração BE (base de dados e serviços reais ou contentores) | dev-be | todos verdes |
-| Integração FE ↔ BE real | dev-fe | todos verdes |
-| E2E dos fluxos da fatia (browser) | dev-fe ou coordenador | todos verdes, em largura de telemóvel e de ecrã |
-| Análise estática / qualidade (ex.: SonarQube) | coordenador | sem problemas novos de severidade alta; quality gate da ferramenta verde |
-| Segurança das dependências | coordenador | sem vulnerabilidades novas altas/críticas |
+| BE integration (real database and services or containers) | dev-be | all green |
+| FE ↔ real BE integration | dev-fe | all green |
+| E2E of the slice's flows (browser) | dev-fe or coordinator | all green, at phone and screen widths |
+| Static analysis / quality (e.g. SonarQube) | coordinator | no new high-severity issues; the tool's quality gate green |
+| Dependency security | coordinator | no new high/critical vulnerabilities |
 
-## Depois do merge (coordenador)
+## After the merge (coordinator)
 
-Suite completa no ramo principal. Se falhar, reverte-se o merge antes de mais nada e a tarefa volta ao dev com o
-output.
+Full suite on the main branch. If it fails, the merge is reverted before anything else and the task goes back to the dev with the output.
 
-## Regra
+## Rule
 
-Resultados reais, com o comando e o output. Um passo não feito diz-se que não foi feito.
+Real results, with the command and the output. A step not done is said not to have been done.

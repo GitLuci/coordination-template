@@ -1,0 +1,4 @@
+{
+  "request": {"method": "POST", "path": "/examples", "body": {"name": "First"}},
+  "response": {"status": 201, "body": {"id": "ex_1", "name": "First", "created_at": "2026-01-01T12:00:00Z"}}
+}

@@ -1,4 +1,0 @@
-{
-  "pedido": {"metodo": "POST", "caminho": "/exemplos", "corpo": {"nome": ""}},
-  "resposta": {"estado": 422, "corpo": {"erro": {"codigo": "nome_invalido", "mensagem": "O nome é obrigatório."}}}
-}

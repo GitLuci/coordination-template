@@ -1,47 +1,37 @@
-# Molde de coordenação
+# Coordination template
 
-Uma forma de trabalhar com **um coordenador e dois ou mais developers** (por exemplo, um de frontend e um de
-backend), cada um no seu terminal ou sessão de agente. Não depende de nenhum projecto, linguagem ou fornecedor de IA.
+A way of working with **one coordinator and two or more developers** (for example, one frontend and one backend), each in their own terminal or agent session. It doesn't depend on any project, language or AI vendor.
 
-A ideia em três frases:
+The idea in three sentences:
 
-1. **Contrato antes de código.** FE e BE só começam a implementar depois de assinarem o contrato da API (o que o FE
-   envia, o que o BE recebe e devolve, o que o FE recebe, os erros e exemplos). Os dois lados testam contra os mesmos
-   exemplos, por isso a integração não traz surpresas.
-2. **O coordenador decide, os devs implementam.** O coordenador responde às perguntas no lugar do dono, gere a fila de
-   testes e integra. Só sobe ao dono o que é mesmo dele: arquitectura, âmbito do produto, custos e acções
-   irreversíveis ou para fora.
-3. **Tudo o que importa fica escrito.** Quadro, perguntas, decisões e contrato vivem em ficheiros que todos lêem;
-   ninguém depende da memória de uma conversa.
+1. **Contract before code.** FE and BE only start implementing after they sign the API contract (what the FE sends, what the BE receives and returns, what the FE receives, the errors and examples). Both sides test against the same examples, so integration holds no surprises.
+2. **The coordinator decides, the devs implement.** The coordinator answers questions in the owner's place, manages the test queue and integrates. Only what is really the owner's goes up to them: architecture, product scope, costs and irreversible or outward-facing actions.
+3. **Everything that matters is written down.** Board, questions, decisions and contract live in files everyone reads; nobody depends on the memory of a conversation.
 
-## Por onde começar
+## Where to start
 
-| Ficheiro | Para quê |
+| File | What it is for |
 |---|---|
-| [`MOLDE.md`](MOLDE.md) | O método completo: papéis, comunicação, ciclo de uma tarefa, testes, escalamento |
-| [`AGENTS.md`](AGENTS.md) | Ponto de entrada para qualquer agente que abra o projecto (copiar para cada repo) |
-| [`papeis/`](papeis/) | O que cada papel faz e não faz: coordenador, dev BE, dev FE |
-| [`contrato/`](contrato/) | O processo contract-first, o modelo do contrato e a verificação de versões |
-| [`coordenacao/`](coordenacao/) | Modelos do quadro, perguntas, decisões, fila de testes e caixas de mensagens |
-| [`gates/QUALITY-GATE.md`](gates/QUALITY-GATE.md) | O que tem de passar antes de uma tarefa ser integrada |
-| [`prompts/`](prompts/) | Prompts de arranque para colar no terminal de cada papel |
+| [`TEMPLATE.md`](TEMPLATE.md) | The complete method: roles, communication, task cycle, tests, escalation |
+| [`AGENTS.md`](AGENTS.md) | Entry point for any agent that opens the project (copy it into each repo) |
+| [`roles/`](roles/) | What each role does and doesn't do: coordinator, dev BE, dev FE |
+| [`contract/`](contract/) | The contract-first process, the contract template and version checking |
+| [`coordination/`](coordination/) | Templates for the board, questions, decisions, test queue and message inboxes |
+| [`gates/QUALITY-GATE.md`](gates/QUALITY-GATE.md) | What must pass before a task is integrated |
+| [`prompts/`](prompts/) | Startup prompts to paste into each role's terminal |
 
-## Como aplicar a um projecto
+## How to apply it to a project
 
-**Um só repositório (monorepo):** copia `AGENTS.md`, `coordenacao/`, `contrato/` e `gates/` para a raiz do projecto.
+**A single repository (monorepo):** copy `AGENTS.md`, `coordination/`, `contract/` and `gates/` into the project root.
 
-**Repositórios separados (FE e BE):** a coordenação fica num sítio que os três lêem e escrevem:
+**Separate repositories (FE and BE):** coordination lives somewhere all three read and write:
 
-- uma pasta local partilhada (ex.: `../coordenacao-<projecto>/`) ou um repositório próprio de coordenação, com
-  `coordenacao/` e `contrato/`;
-- cada repositório (FE e BE) tem o seu `AGENTS.md` a apontar para essa pasta e uma cópia do contrato assinado em
-  `contrato/`, verificada pelo `scripts/contrato.py verificar --contra <pasta partilhada>`.
+- a shared local folder (e.g. `../coordination-<project>/`) or a dedicated coordination repository, with `coordination/` and `contract/`;
+- each repository (FE and BE) has its own `AGENTS.md` pointing at that folder and a copy of the signed contract in `contract/`, checked with `scripts/contract.py verify --against <shared folder>`.
 
-Depois, preenche os prompts de [`prompts/`](prompts/) com os dados do projecto e cola-os em cada terminal.
+Then fill in the prompts in [`prompts/`](prompts/) with the project's details and paste them into each terminal.
 
-## Comunicação entre agentes
+## Communication between agents
 
-- **Sessões do Claude Code na mesma máquina** podem usar as mensagens directas entre sessões para avisos urgentes.
-  Mesmo assim, o que for decidido fica escrito nos ficheiros.
-- **Terminais, sessões ou agentes de outros fornecedores** (ou qualquer mistura) comunicam **só por ficheiros**, no
-  git ou numa pasta local partilhada: o quadro, as caixas de mensagens, as perguntas e as decisões.
+- **Claude Code sessions on the same machine** can use direct messages between sessions for urgent notices. Even so, whatever is decided is written in the files.
+- **Terminals, sessions or agents from other vendors** (or any mix) communicate **only through files**, in git or a shared local folder: the board, the inboxes, the questions and the decisions.

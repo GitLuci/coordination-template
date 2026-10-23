@@ -1,4 +1,0 @@
-{
-  "pedido": {"metodo": "POST", "caminho": "/exemplos", "corpo": {"nome": "Primeiro"}},
-  "resposta": {"estado": 201, "corpo": {"id": "ex_1", "nome": "Primeiro", "criado_em": "2026-01-01T12:00:00Z"}}
-}

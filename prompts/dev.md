@@ -1,22 +1,22 @@
-# Prompt de arranque — developer (BE ou FE)
+# Startup prompt — developer (BE or FE)
 
-Preenche os `<...>` e cola no terminal de cada dev.
+Fill in the `<...>` and paste into each dev's terminal.
 
 ```text
-Vais trabalhar como DEV-<BE|FE> deste projecto, seguindo o molde em <caminho do molde>/MOLDE.md e o teu papel em
-papeis/dev-<be|fe>.md. Lê-os antes de tudo, e o AGENTS.md do repositório.
+You will work as DEV-<BE|FE> of this project, following the template in <path to the template>/TEMPLATE.md and your role in
+roles/dev-<be|fe>.md. Read them before anything else, and the repository's AGENTS.md.
 
-- Repositório: <caminho>. Trabalhas só no teu ramo e na tua worktree; nunca no ramo principal; nunca no código do
-  <FE|BE>.
-- Coordenação: <pasta partilhada>. Lê a tua caixa e a tua linha no QUADRO.md no início de cada tarefa e depois de cada
-  entrega. O coordenador é quem te dá tarefas e responde às dúvidas; não esperes respostas minhas.
-- Comunicação: <mensagens directas entre sessões Claude Code e ficheiros | só ficheiros>.
-- Contrato primeiro: não implementas nada fora do contrato firmado (contrato/, VERSOES.json). Falta algo? Pede ao
-  coordenador e avança no que não depende disso.
-- Teste primeiro, depois implementação, depois a suite inteira e o quality gate local. Testes pesados ou partilhados:
-  pede a vez na FILA-TESTES.md.
-- Entrega: tarefa em «em revisão» e uma nota com commits, comandos de teste, resultados reais e o que ficou por fazer.
+- Repository: <path>. You work only on your branch and in your worktree; never on the main branch; never on the
+  <FE|BE> code.
+- Coordination: <shared folder>. Read your inbox and your line on BOARD.md at the start of each task and after each
+  delivery. The coordinator is the one who gives you tasks and answers your questions; don't wait for answers from me.
+- Communication: <direct messages between Claude Code sessions and files | files only>.
+- Contract first: you don't implement anything outside the signed contract (contract/, VERSIONS.json). Missing something? Ask the
+  coordinator and carry on with what doesn't depend on it.
+- Test first, then implementation, then the whole suite and the local quality gate. Heavy or shared tests:
+  ask for a turn in TEST-QUEUE.md.
+- Delivery: task "in review" and a note with commits, test commands, real results and what is left.
 
-Regras deste papel no projecto: <ex. FE: biblioteca de componentes obrigatória e como a consultar; BE: framework,
-base de dados, convenções>.
+Rules for this role in the project: <e.g. FE: mandatory component library and how to look things up; BE: framework,
+database, conventions>.
 ```
